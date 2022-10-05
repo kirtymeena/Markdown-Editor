@@ -1,0 +1,65 @@
+@use "../../sass/utils/mixin" as *;
+@use "../../sass/utils/breakpoints" as *;
+@use "../../sass/utils/varibales" as *;
+
+.markdown-lg {
+  display: none;
+}
+
+@include md {
+  .markdown-sm {
+    display: none;
+  }
+  .markdown-lg {
+    display: block;
+  }
+
+  .line {
+    color: $line-color;
+  }
+
+  .divider__heading {
+    background-color: #22222a;
+  }
+  .text-area {
+    min-width: 100%;
+    min-height: 91%;
+    background-color: #1c1b22 !important;
+    outline: none !important;
+    border: none !important;
+    color: #a1a1aa !important;
+  }
+
+  .preview__area {
+    background-color: #1C1B22 
+  }
+
+  .preview__text {
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    min-height: 100vh;
+    
+  }
+  .mytext {
+    height: 100%;
+  }
+}
+
+//small screen
+
+.markdown-sm-area {
+  @include flex-column();
+}
+
+.input__area {
+  height: 90vh;
+}
+
+.text-area-sm {
+  min-width: 100%;
+  min-height: 90vh;
+  background-color: #1c1b22 !important;
+  outline: none !important;
+  border: none !important;
+  color: #a1a1aa !important;
+}
