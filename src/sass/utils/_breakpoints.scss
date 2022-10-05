@@ -4,14 +4,15 @@
     }
 };
 @mixin md{
-    // 768px
-    @media (min-width: 608px) {
+    // 608px
+    @media (min-width: 768px) {
         @content
     } 
 };
 
 @mixin lg{
-    @media (min-width: 992px) {
+    //992
+    @media (min-width: 890px) {
         @content
     }
 }

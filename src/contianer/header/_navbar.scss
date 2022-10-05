@@ -1,0 +1,102 @@
+@use "../../sass/utils/mixin" as *;
+@use "../../sass/utils/breakpoints" as *;
+@use "../../sass/utils/varibales" as *;
+
+
+
+
+.navbar-sm{
+    @include flex-col-reverse($gap:0);
+    justify-content: center;
+    
+}
+
+.navbar__brand-sm{
+    background-color: $navbar-bg;
+    font-size: 12px;
+    @include flex-row();
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar-lg{
+    display: none;
+}
+
+.file__name-sm {
+    padding-inline:1rem;
+    padding-block:0.6rem;
+    @include flex-row();
+    justify-content: space-between;
+    align-items: center;
+    background-color: #27272a;
+
+}
+
+.icons{
+    @include flex-row();
+    @include md{
+        @include flex-row($gap:3rem);
+
+    }
+    justify-content:center;
+    align-items: center;
+}
+
+.delete, .save,.view{
+    cursor: pointer;
+    color:$icon
+}
+
+// .save-icon{
+//     // padding:0.2rem;
+//     border-radius: 3px;
+//     background-color: #E36B4A;
+
+// }
+
+// for large screens
+@include md{
+    .navbar-sm{
+        display: none;
+    }
+    .navbar-lg{
+        display: block;
+    }
+
+.navbar-lg {
+  @include flex-row();
+  font-size: 12px;
+  width: 100%;
+  font-size: 16px;
+  justify-content: space-between;
+  background-color: $header;
+}
+.navbar__logo-lg {
+  display: none;
+}
+
+.navbar__brand {
+  @include flex-row();
+  justify-content: center;
+  align-items: center;
+}
+.vertical__line {
+  border-left: 3px solid $vertical-border;
+  height: 2.5rem;
+ }
+
+ .navbar__links{
+    @include flex-row();
+    justify-content:  center;
+    align-items: center;
+
+ }
+//  .save-icon{
+//     background-color: #E36B4A;
+//     padding:0.4rem;
+//     // border-radius: 3px;
+// }
+
+}

@@ -1,13 +1,11 @@
+import MarkdownArea from "./components/markdownArea/MarkdownArea";
+import Navbar from "./contianer/header/Navbar";
 
 function App() {
-  const fun = () => {
-    const v = "fdjg"
-    console.log(v)
-  }
-  fun()
   return (
     <div className="App">
-
+      <Navbar/>
+      <MarkdownArea/>
     </div>
   );
 }
