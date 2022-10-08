@@ -20,7 +20,6 @@ import { combineReducers } from "redux";
 const persistConfig = {
     key: 'root',
     version: 1,
-    blacklist: ['saveReducer'],
     storage
 }
 

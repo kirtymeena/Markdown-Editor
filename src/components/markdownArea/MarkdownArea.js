@@ -9,12 +9,13 @@ import { deleteFile, updateSave } from '../../redux/features/saveSlice';
 function MarkdownArea() {
     const [text, setText] = useState('')
     const [openPreview, setOpenPreview] = useState(false)
-    const saveState = useSelector(state=>state.saveState)
-    const saveText = useSelector(state=>state.saveTextState)
+    const saveState = useSelector(state => state.saveState)
+    const saveText = useSelector(state => state.saveTextState)
     const dispatch = useDispatch()
 
     const renderText = () => {
-        const __html = marked.parse(saveText.text.text === undefined || saveText.text.text === null? text : saveText.text.text , {
+        // console.log(saveText.text.text, text)
+        const __html = marked.parse(saveText.text.text || text, {
             sanitizer: true,
             gfm: true,
             pedantic: true,
@@ -30,24 +31,26 @@ function MarkdownArea() {
         setOpenPreview(!openPreview)
     }
 
-  
+
 
     useEffect(() => {
-      if(saveState.save && text!==''){
-        console.log("dispatched")
-        dispatch(saveInput({text:text}))
-      }
+        if (saveState.save && text !== '') {
+            console.log("dispatched")
+            dispatch(saveInput({ text: text }))
+        }
 
-      if(saveState.delete){
-        setText('')
-      }
+        if (saveState.delete) {
+            setText('')
+        }
 
-      if(text==="" && saveState.save===false){
-        dispatch(updateSave())
-      }
-    //   console.log(saveText.text.text, saveState)
+        if (text === "" && saveState.save === false) {
+            dispatch(updateSave())
+            dispatch(saveInput({ text: "" }))
+        }
+        //   console.log(saveText.text.text, saveState)
+        text.length === 0 && saveText.text.text !== undefined ? console.log("===redux===:", saveText.text.text) : console.log("===react===", text)
 
-    }, [text,saveText.text.text,saveState.save])
+    }, [text, saveText.text.text, saveState.save])
 
     return (
         <div className='markdown__layout'>
@@ -63,7 +66,6 @@ function MarkdownArea() {
                                 <h2 className='letter-spacing impure-white '>MARKDOWN</h2>
                             </div>
                     }
-
                     <div>
                         <i className="pi pi-eye view" onClick={TogglePreview} style={{ fontSize: "1.2rem" }}></i>
                     </div>
@@ -72,15 +74,11 @@ function MarkdownArea() {
                 <div className='markdown__sm-area '>
                     {
                         !openPreview ?
-
                             <div className='input__area'>
-                                <InputTextarea autoResize  className='text-area-sm' value={saveState.save ? saveText.text.text:text} onChange={e => setText(e.target.value)} />
-
+                                <InputTextarea autoResize className='text-area-sm' value={text.length === 0 && saveText.text.text !== undefined ? saveText.text.text : text} onChange={e => setText(e.target.value)} />
                             </div>
                             :
-                            <div className='preview__area container' dangerouslySetInnerHTML={renderText()}>
-
-                            </div>
+                            <div className='preview__area container' dangerouslySetInnerHTML={renderText()}></div>
                     }
                 </div>
             </div>
@@ -93,7 +91,7 @@ function MarkdownArea() {
                             <p className='letter-spacing container'>Markdown</p>
                             <hr className='line' />
                         </div>
-                        <InputTextarea autoResize className='text-area' value={saveText.text.text ?saveText.text.text:text} onChange={e => setText(e.target.value)} />
+                        <InputTextarea autoResize className='text-area' value={text.length === 0 && saveText.text.text !== undefined ? saveText.text.text : text} onChange={e => setText(e.target.value)} />
                     </SplitterPanel>
                     <SplitterPanel className='preview__area'>
                         <div className='divider__heading'>

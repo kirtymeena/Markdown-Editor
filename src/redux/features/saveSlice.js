@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSerializableStateInvariantMiddleware, createSlice } from "@reduxjs/toolkit";
 
 const saveSlice = createSlice({
     name:'save',
     initialState : {
         save:false,
         delete:false,
+        fileName:'welcome'
        
 
     },
@@ -16,10 +17,15 @@ const saveSlice = createSlice({
         deleteFile:(state,action) =>{
             state.delete = true
             state.save = false
+            state.fileName = 'welcome'
         },
+
+        updatefileName:(state,action)=>{
+            state.fileName = action.payload
+        }
        
     }
 })
 
-export const {updateSave,deleteFile} = saveSlice.actions
+export const {updateSave,deleteFile,updatefileName} = saveSlice.actions
 export default saveSlice.reducer
