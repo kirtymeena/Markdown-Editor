@@ -1,0 +1,30 @@
+@use "../../sass/utils/mixin" as *;
+@use "../../sass/utils/breakpoints" as *;
+@use "../../sass/utils/varibales" as *;
+
+.home__wrapper {
+  min-height: 100vh;
+}
+.home__layout {
+  @include flex-column();
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 95vh;
+  color: $hone-text-color;
+  gap: 3rem;
+}
+
+.home__center-text {
+  @include flex-column();
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // min-height: 95vh;
+  color: $hone-text-color;
+  text-align: center;
+  gap: 3rem;
+}
+
+.github-icon {
+}

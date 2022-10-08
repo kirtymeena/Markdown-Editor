@@ -5,6 +5,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteText, saveInput } from '../../redux/features/textSlice';
 import { deleteFile, updateSave } from '../../redux/features/saveSlice';
+import Navbar from '../../contianer/header/Navbar';
 
 function MarkdownArea() {
     const [text, setText] = useState('')
@@ -14,7 +15,6 @@ function MarkdownArea() {
     const dispatch = useDispatch()
 
     const renderText = () => {
-        // console.log(saveText.text.text, text)
         const __html = marked.parse(saveText.text.text || text, {
             sanitizer: true,
             gfm: true,
@@ -32,28 +32,28 @@ function MarkdownArea() {
     }
 
 
-
     useEffect(() => {
+        //saves markdown
         if (saveState.save && text !== '') {
-            console.log("dispatched")
             dispatch(saveInput({ text: text }))
         }
-
+        
+        // if saveState.delete === true then remove all then text
         if (saveState.delete) {
             setText('')
         }
 
+        //after selecting delete, it will start auto save
         if (text === "" && saveState.save === false) {
             dispatch(updateSave())
             dispatch(saveInput({ text: "" }))
         }
-        //   console.log(saveText.text.text, saveState)
-        text.length === 0 && saveText.text.text !== undefined ? console.log("===redux===:", saveText.text.text) : console.log("===react===", text)
 
     }, [text, saveText.text.text, saveState.save])
 
     return (
         <div className='markdown__layout'>
+            <Navbar/>
             <div className='markdown-sm'>
                 <div className='navbar__brand-sm container'>
                     {

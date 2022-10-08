@@ -5,9 +5,9 @@ import { Button } from 'primereact/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFile, updatefileName, updateSave } from '../../redux/features/saveSlice';
 import { deleteText } from '../../redux/features/textSlice';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-    const [documentName, setDocumentName] = useState('')
     const dispatch = useDispatch()
     const state = useSelector(state => state)
 
@@ -61,7 +61,7 @@ function Navbar() {
             <div className='navbar-lg container'>
                 <div className='navbar__brand'>
                     <div className='navbar__logo'>
-                        <h3 className='letter-spacing impure-white'>MARKDOWN</h3>
+                        <Link to="/" className='link'><h3 className='letter-spacing impure-white'>MARKDOWN</h3></Link>
                     </div>
                     <div className='vertical__line'>
 
