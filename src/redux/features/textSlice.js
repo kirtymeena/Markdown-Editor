@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const textSlice = createSlice({
     name: 'text',
     initialState: {
-        text: " "
+        text: ""
     },
     reducers: {
         saveInput: (state, action) => {
+           
             state.text = action.payload
         },
         deleteText:(state,action) =>{

@@ -14,7 +14,8 @@ function MarkdownArea() {
     const dispatch = useDispatch()
 
     const renderText = () => {
-        const __html = marked.parse(saveText.text.text === undefined || saveText.text.text === null? text : saveText.text.text , {
+        console.log(saveText.text.text,text)
+        const __html = marked.parse(saveText.text.text || text , {
             sanitizer: true,
             gfm: true,
             pedantic: true,
@@ -44,6 +45,7 @@ function MarkdownArea() {
 
       if(text==="" && saveState.save===false){
         dispatch(updateSave())
+        dispatch(saveInput({text:""}))
       }
     //   console.log(saveText.text.text, saveState)
 
