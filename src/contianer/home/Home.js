@@ -56,7 +56,7 @@ function Home() {
                         transition={{ duration: 1 }}
 
                     >
-                        <Link to="/markdown-editor"><Button label="Go to editor" className="p-button-raised" style={{  marginRight: "2rem" }} /></Link>
+                        <Link to="/markdown-editor" className='link'><Button label="Go to editor" className="p-button-raised" style={{  marginRight: "2rem" }} /></Link>
                         <Button label="Markdown Rules" icon="pi pi-external-link" onClick={() => onClick('displayBasic')} />
                     </motion.div>
                 </div>
