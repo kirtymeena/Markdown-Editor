@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# About This Project
+Markdown is a lightweight markup language that you use to add formatting elements to plaintext text documents.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I decided to create this editor because I found this challenge to be interesting and it was fun creating it. For UI components I have used prime react and to store the user data local storage has been used.
 
-## Available Scripts
+For home page animation Framer motion have been used, even though there is no complex animation still I wanted to try framer motion.
 
-In the project directory, you can run:
+## Screenshots
+![Untitled](https://user-images.githubusercontent.com/40634061/194701787-f003472d-11ed-49d5-bb4b-6a3b889d3274.png)
 
-### `npm start`
+### Mobile View
+![Screen Shot 2022-10-08 at 15 28 46](https://user-images.githubusercontent.com/40634061/194702709-cf1205fb-786b-49e3-a65f-8b0c5213ef42.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screen Shot 2022-10-![Uploading Screen Shot 2022-10-08 at 15.28.46.png…]()
+08 at 15 28 17](https://user-images.githubusercontent.com/40634061/194701866-d7ce71c1-ce72-4258-b40a-c7f06abca39b.png)
 
-### `npm test`
+## What did I implement in this project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Live preview
+- User can adjust the markdown area and preview area.
+- responsive layout.
+- User can save and edit the file name.
+- User can save their work. 
+- User can delete their saved work.
+- User can view the preview of thier markdown.
 
-### `npm run build`
+## Technology used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React.js : 18.2.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Redux Toolkit : 1.8.5
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+framer-motion : 7.5.3
 
-### `npm run eject`
+react-router-dom: 6.4.1
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+sass : 1.55.0
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+primereact : 8.6.1
